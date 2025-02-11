@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
    "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="tblcustomer">
+<mapper namespace="tblcustomer"> <!-- 식별자를 작명해야 합니다. -->
 	<!-- select 는 반드시 resultType 이 필수 입니다. : 대부분 VO (받아와야 하는게 많아서)
 		 select 는 parameterType 은 where 조건식에 따라서 결정됩니다. 
 		 
@@ -10,12 +10,12 @@
 		 insert, update, delete 는 resultType 없습니다. 
 		 insert, update 는 parameterType 이 대부분 VO 입니다. 
 	-->
-	<select id="selectByPk" parameterType="String" resultType="CustomerVo">
+	<select id="selectByPk" parameterType="String" resultType="CustomerVo"><!-- parameterType : 입력, resultType : 출력 -->
 		select * from tbl_customer
 		where custom_id = #{customId}
 	</select>
 
-	<!-- 리턴타입이 List 일때에는 제너틱타입만 설정하면 됩니다. --><!-- 매개변수(where 조건식)가 없어서 파라미터타입이 없다. -->
+	<!-- 리턴타입이 List 일때에는 제너틱타입만 설정하면 됩니다. --><!-- 매개변수(where 조건식)가 없어서 parameterType 이 없다. -->
 	<select id="selectAll" resultType="CustomerVo">
 		select * from tbl_custom order by custom_id
 	</select>
