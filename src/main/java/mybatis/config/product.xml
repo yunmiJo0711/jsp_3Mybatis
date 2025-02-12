@@ -3,6 +3,7 @@
    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
    "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="tblproduct"> <!-- 식별자를 작명해야 합니다. -->
+	<!-- 참고 : jsp에서 에트리뷰트는 el 기호는 ${}, xml에서는 매개변수(파라미터)를 #{} 으로 작성한다. -->
 	<!-- select 는 반드시 resultType 이 "필수" 입니다. : 대부분 VO (받아와야 하는게 많아서)
 		 select 는 parameterType 은 where 조건식에 따라서 결정됩니다. 
 		 
