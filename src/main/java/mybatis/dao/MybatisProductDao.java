@@ -13,6 +13,7 @@ public class MybatisProductDao {
 	
 	public List<ProductVo> searchByKeyword(String keyword) {
 		SqlSession sqlSession = sessFactory.openSession();
+		// select SQL 조회 결과 행이 여러개 : selectList 메소드 
 		List<ProductVo> list = sqlSession.selectList("tblproduct.searchByKeyword", keyword);
 		sqlSession.close();
 		return list;
@@ -20,6 +21,7 @@ public class MybatisProductDao {
 	
 	public List<ProductVo> selectByCategory(String category) {
 		SqlSession sqlSession = sessFactory.openSession();
+		// select SQL 조회 결과 행이 여러개 : selectList 메소드 
 		List<ProductVo> list = sqlSession.selectList("tblproduct.selectByCategory", category);
 		sqlSession.close();
 		return list;
@@ -27,6 +29,7 @@ public class MybatisProductDao {
 	
 	public ProductVo selectByPk(String pcode) {
 		SqlSession sqlSession = sessFactory.openSession();
+		// select SQL 조회 결과 행이 1 개 : selectOne 메소드 
 		ProductVo vo = sqlSession.selectOne("tblproduct.selectByPk",pcode);
 		sqlSession.close();
 		return vo;
