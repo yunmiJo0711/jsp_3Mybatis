@@ -20,6 +20,7 @@ public class MybatisCustomerDao {
  *  아래의 5개 메소드의 인자 : 문자열 -> 매퍼xml 의 네임스페이스.id 값. (customer.xml 에 가보면 있음.)
  *  				 선택적인 두번째 인자 -> SQL 실행에 필요한 파라미터값
  * 
+ * 
  */
 	public CustomerVo selectByPk(String customId) {
 		SqlSession sqlSession = sessionFactory.openSession();

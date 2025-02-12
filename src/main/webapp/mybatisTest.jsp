@@ -28,7 +28,6 @@
 		MybatisProductDao dao2 = new MybatisProductDao();
 		//int result = dao2.insert(pdvo); // insert 는 pk 값이라 중복으로 넣으면 안되서 주석처리함. 
 		//out.print("result : " + result);
-		
 		out.print(dao2.selectByPk("SPAM9E"));
 		out.print("<br/>");
 		out.print(dao2.searchByKeyword("새우"));
